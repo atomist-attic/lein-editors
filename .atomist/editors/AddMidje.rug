@@ -1,0 +1,8 @@
+@description "Add Midje support to a Leingingen project"
+editor AddMidje
+
+with clojure.lein  
+begin
+    do addDependency "midje" "1.8.3" "dev"
+    do addPlugin "lein-midje" "3.1.3" "dev"
+end
