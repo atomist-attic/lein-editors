@@ -1,3 +1,9 @@
+@tag "lein"
+@tag "clojure"
+@tag "midje"
+@tag "testing"
+@tag "lein"
+
 @description "Add Midje support to a Leingingen project"
 editor AddMidje
 
