@@ -1,7 +1,7 @@
 @tag "clojure"
 @tag "lein"
 
-@description "Generates a new simple Leingingen project"
+@description "Generates a new minimal Lein project"
 @generator "Simple Lein Clojure Project"
 editor SimpleLeinClojureProject
 
@@ -19,7 +19,9 @@ param project_name: @project_name
 @displayName "Package Name"
 param package_name: @java_package
 
-with clojure.lein l 
+let readme = "README.vm"
+
+with clojure.lein
 begin
     do setProjectDescription project_description
     do setProjectName { package_name + "/" + project_name; }
@@ -30,8 +32,19 @@ begin
     do renamePackage "com.atomist.sample" { package_name + "." + project_name }
 end
 
+
+with project
+    do deleteFile "README.md"
+
+with project
+  do merge readme to "README.md"
+
 with file when filename = "README.md"
 begin
-    do replace "Simple Lein Project Generator" project_name
-    do regexpReplace "<a.*https://api.*/v1/projects/generators/.*a>" project_description
+    do replace "PROJECT_NAME" project_name
+    do replace "PROJECT_DESCRIPTION" project_description
 end
+
+with project
+    do deleteFile "license.txt"
+
