@@ -8,7 +8,7 @@ editor SimpleLeinClojureProject
 @maxLength 100
 @description "Short description of your project"
 @displayName "Project Description"
-param project_description: .*
+param project_description: ^.*$
 
 @maxLength 21
 @description "Name of the project (used for repo name, lein project name and maven artifactId)" 
@@ -33,18 +33,20 @@ begin
 end
 
 
-with project
+with Project
     do deleteFile "README.md"
 
-with project
+with Project
   do merge readme to "README.md"
 
-with file when filename = "README.md"
+with File when filename = "README.md"
 begin
     do replace "PROJECT_NAME" project_name
     do replace "PROJECT_DESCRIPTION" project_description
 end
 
-with project
-    do deleteFile "license.txt"
-
+with Project
+begin
+    do deleteFile "LICENSE"
+    do deleteFile "CODE_OF_CONDUCT.md"
+end
