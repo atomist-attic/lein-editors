@@ -6,8 +6,22 @@
 @description "Add Midje support to a Leiningen project"
 editor AddMidje
 
+@displayName "Midje version"
+@description "Set the Midje version required for the project"
+@minLength 5
+@maxLength 20
+@default '1.8.3'
+param midje_version: ^.*$
+
+@displayName "Midje plugin version"
+@description "Set the Midje version required for the project"
+@minLength 5
+@maxLength 20
+@default '3.1.3'
+param midje_plugin_version: ^.*$
+
 with clojure.lein  
 begin
-    do addDependency "midje" "1.8.3" "dev"
-    do addPlugin "lein-midje" "3.1.3" "dev"
+    do addDependency "midje" midje_version "dev"
+    do addPlugin "lein-midje" midje_plugin_version "dev"
 end
