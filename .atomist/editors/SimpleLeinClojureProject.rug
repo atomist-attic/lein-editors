@@ -2,7 +2,7 @@
 @tag "lein"
 
 @description "Generates a new minimal Lein project"
-@generator "Simple Lein Clojure Project"
+@generator
 editor SimpleLeinClojureProject
 
 @maxLength 100
