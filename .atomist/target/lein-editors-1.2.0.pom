@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>atomist-rugs</groupId>
+  <artifactId>lein-editors</artifactId>
+  <version>1.2.0</version>
+  <packaging>pom</packaging>
+  <name>lein-editors</name>
+  <dependencies>
+    <dependency>
+      <groupId>com.atomist</groupId>
+      <artifactId>rug</artifactId>
+      <version>[0.8.0,1.0.0)</version>
+    </dependency>
+    <dependency>
+      <groupId>com.atomist</groupId>
+      <artifactId>clj-rug</artifactId>
+      <version>0.5.3-20170104144544</version>
+    </dependency>
+  </dependencies>
+</project>
