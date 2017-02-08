@@ -1,0 +1,128 @@
+{
+  "group" : "atomist-rugs",
+  "artifact" : "lein-editors",
+  "version" : "1.2.0",
+  "editors" : [ {
+    "name" : "atomist-rugs.lein-editors.AddMidje",
+    "description" : "Add Midje support to a Leiningen project",
+    "parameters" : [ {
+      "name" : "midje_version",
+      "description" : "Set the Midje version required for the project",
+      "pattern" : "^.*$",
+      "required" : false,
+      "displayable" : true,
+      "default_value" : "1.8.3",
+      "valid_input_description" : "String value",
+      "max_length" : 20,
+      "min_length" : 5,
+      "display_name" : "Midje version"
+    }, {
+      "name" : "midje_plugin_version",
+      "description" : "Set the Midje version required for the project",
+      "pattern" : "^.*$",
+      "required" : false,
+      "displayable" : true,
+      "default_value" : "3.1.3",
+      "valid_input_description" : "String value",
+      "max_length" : 20,
+      "min_length" : 5,
+      "display_name" : "Midje plugin version"
+    } ],
+    "tags" : [ {
+      "name" : "lein",
+      "decription" : "lein"
+    }, {
+      "name" : "clojure",
+      "decription" : "clojure"
+    }, {
+      "name" : "midje",
+      "decription" : "midje"
+    }, {
+      "name" : "testing",
+      "decription" : "testing"
+    } ]
+  }, {
+    "name" : "atomist-rugs.lein-editors.SimpleLeinClojureProject",
+    "description" : "Generates a new minimal Lein project",
+    "parameters" : [ {
+      "name" : "project_description",
+      "description" : "Short description of your project",
+      "pattern" : "^.*$",
+      "required" : true,
+      "displayable" : true,
+      "valid_input_description" : "String value",
+      "max_length" : 100,
+      "min_length" : -1,
+      "display_name" : "Project Description"
+    }, {
+      "name" : "project_name",
+      "description" : "Name of the project (used for repo name, lein project name and maven artifactId)",
+      "pattern" : "^[-\\w.]+$",
+      "required" : true,
+      "displayable" : true,
+      "valid_input_description" : "String value",
+      "max_length" : 21,
+      "min_length" : -1,
+      "display_name" : "Project Name"
+    }, {
+      "name" : "package_name",
+      "description" : "Set the root package name for the project. Also used for groupId",
+      "pattern" : "^(?:(?:[A-Za-z_$][\\w$]*\\.)*[A-Za-z_$][\\w$]*)*$",
+      "required" : true,
+      "displayable" : true,
+      "valid_input_description" : "String value",
+      "max_length" : -1,
+      "min_length" : -1,
+      "display_name" : "Package Name"
+    } ],
+    "tags" : [ {
+      "name" : "clojure",
+      "decription" : "clojure"
+    }, {
+      "name" : "lein",
+      "decription" : "lein"
+    } ]
+  } ],
+  "generators" : [ {
+    "name" : "SimpleLeinClojureProject",
+    "description" : "Generates a new minimal Lein project",
+    "parameters" : [ {
+      "name" : "project_description",
+      "description" : "Short description of your project",
+      "pattern" : "^.*$",
+      "required" : true,
+      "displayable" : true,
+      "valid_input_description" : "String value",
+      "max_length" : 100,
+      "min_length" : -1,
+      "display_name" : "Project Description"
+    }, {
+      "name" : "project_name",
+      "description" : "Name of the project (used for repo name, lein project name and maven artifactId)",
+      "pattern" : "^[-\\w.]+$",
+      "required" : true,
+      "displayable" : true,
+      "valid_input_description" : "String value",
+      "max_length" : 21,
+      "min_length" : -1,
+      "display_name" : "Project Name"
+    }, {
+      "name" : "package_name",
+      "description" : "Set the root package name for the project. Also used for groupId",
+      "pattern" : "^(?:(?:[A-Za-z_$][\\w$]*\\.)*[A-Za-z_$][\\w$]*)*$",
+      "required" : true,
+      "displayable" : true,
+      "valid_input_description" : "String value",
+      "max_length" : -1,
+      "min_length" : -1,
+      "display_name" : "Package Name"
+    } ],
+    "tags" : [ {
+      "name" : "clojure",
+      "decription" : "clojure"
+    }, {
+      "name" : "lein",
+      "decription" : "lein"
+    } ]
+  } ]
+}
